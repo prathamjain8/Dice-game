@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Refresh Me</h1>
+
+        <div class="dice">
+            <p>Player 1</p>
+            <img class="img1" src="images/dice6.png" alt="">
+        </div>
+        <div class="dice">
+            <p>Player 2</p>
+            <img class="img2" src="images/dice6.png" alt="">
+        </div>
+    </div>
+    <script>
+        var randomNumber1 = Math.floor((Math.random() * 6) + 1);
+        var randomDiceImage = "images/dice" + randomNumber1 + ".png";
+        var image1 = document.querySelectorAll("img")[0].setAttribute("src", randomDiceImage);
+
+        var randomNumber2 = Math.floor((Math.random() * 6) + 1);
+        var randomDiceImage2 = "images/dice" + randomNumber2 + ".png";
+        var image2 = document.querySelectorAll("img")[1].setAttribute("src", randomDiceImage2);
+
+        if (randomNumber1 > randomNumber2) {
+            document.querySelector("h1").innerHTML = "🥳Player 1 won";
+        } else if (randomNumber1 == randomNumber2) {
+            document.querySelector("h1").innerHTML = "Draw";
+        } else {
+            document.querySelector("h1").innerHTML = "Player 2 won🥳";
+        }
+    </script>
+</body>
+
+</html>
